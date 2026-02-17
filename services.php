@@ -21,19 +21,19 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">PêlêTech Nexus</a>
+            <a href="index.php" class="logo">PêlêTech Nexus</a>
 
             <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                 <span class="icon"><i class="fas fa-bars"></i></span>
             </button>
 
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Accueil</a></li>
-                <li><a href="services.html" class="nav-link active">Services</a></li>
-                <li><a href="realisations.html" class="nav-link">Réalisations</a></li>
-                <li><a href="process.html" class="nav-link">Processus</a></li>
-                <li><a href="apropos.html" class="nav-link">À propos</a></li>
-                <li><a href="contact.html" class="nav-link cta-nav">Démarrer un projet</a></li>
+                <li><a href="index.php" class="nav-link">Accueil</a></li>
+                <li><a href="services.php" class="nav-link active">Services</a></li>
+                <li><a href="realisations.php" class="nav-link">Réalisations</a></li>
+                <li><a href="process.php" class="nav-link">Processus</a></li>
+                <li><a href="apropos.php" class="nav-link">À propos</a></li>
+                <li><a href="contact.php" class="nav-link cta-nav">Démarrer un projet</a></li>
             </ul>
         </div>
     </nav>
@@ -68,7 +68,8 @@
                         <div style="margin: 1.5rem 0;">
                             <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Votre enjeu</h4>
                             <p style="color: var(--light-secondary);">
-                                Inspirer confiance, capter l’attention et affirmer votre crédibilité dès les premières secondes.
+                                Inspirer confiance, capter l’attention et affirmer votre crédibilité dès les premières
+                                secondes.
                             </p>
 
                             <h4 style="color: var(--primary); margin: 1.5rem 0 0.5rem;">Notre approche</h4>
@@ -80,11 +81,21 @@
 
                             <h4 style="color: var(--primary); margin: 1.5rem 0 0.5rem;">Ce que vous obtenez</h4>
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li><span style="color: var(--primary);">✓</span> <span style="color: var(--light-secondary);">Une expérience fluide et cohérente sur tous les écrans</span></li>
-                                <li><span style="color: var(--primary);">✓</span> <span style="color: var(--light-secondary);">Une image professionnelle forte et différenciante</span></li>
-                                <li><span style="color: var(--primary);">✓</span> <span style="color: var(--light-secondary);">Une base saine pour la visibilité et le référencement</span></li>
-                                <li><span style="color: var(--primary);">✓</span> <span style="color: var(--light-secondary);">Une navigation claire, intuitive et rassurante</span></li>
-                                <li><span style="color: var(--primary);">✓</span> <span style="color: var(--light-secondary);">Un outil évolutif, fiable et maintenable dans le temps</span></li>
+                                <li><span style="color: var(--primary);">✓</span> <span
+                                        style="color: var(--light-secondary);">Une expérience fluide et cohérente sur
+                                        tous les écrans</span></li>
+                                <li><span style="color: var(--primary);">✓</span> <span
+                                        style="color: var(--light-secondary);">Une image professionnelle forte et
+                                        différenciante</span></li>
+                                <li><span style="color: var(--primary);">✓</span> <span
+                                        style="color: var(--light-secondary);">Une base saine pour la visibilité et le
+                                        référencement</span></li>
+                                <li><span style="color: var(--primary);">✓</span> <span
+                                        style="color: var(--light-secondary);">Une navigation claire, intuitive et
+                                        rassurante</span></li>
+                                <li><span style="color: var(--primary);">✓</span> <span
+                                        style="color: var(--light-secondary);">Un outil évolutif, fiable et maintenable
+                                        dans le temps</span></li>
                             </ul>
                         </div>
 
@@ -93,15 +104,12 @@
                             <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
                                 <span class="badge badge-secondary">HTML5 / CSS3</span>
                                 <span class="badge badge-secondary">JavaScript</span>
-                                <span class="badge badge-secondary">React</span>
-                                <span class="badge badge-accent">WordPress</span>
-                                <span class="badge badge-accent">Webflow</span>
+                                <span class="badge badge-secondary">Design system</span>
+                                <span class="badge badge-secondary">PHP / MySQL</span>
+                                <span class="badge badge-secondary">GitHub</span>
                             </div>
                         </div>
 
-                        <p style="margin-top: 1.5rem; color: var(--light-secondary);">
-                            Des sites pensés comme des leviers stratégiques, pas de simples vitrines.
-                        </p>
                     </div>
 
                     <div class="card card-gradient">
@@ -111,10 +119,13 @@
                             </div>
                             <h3 style="margin-bottom: 1rem; color: var(--light);">Types de sites réalisés</h3>
                             <ul style="text-align: left; list-style: none; padding: 0;">
-                                <li>• <span style="color: var(--light-secondary);">Sites vitrines & portfolios</span></li>
+                                <li>• <span style="color: var(--light-secondary);">Sites vitrines & portfolios</span>
+                                </li>
                                 <li>• <span style="color: var(--light-secondary);">Sites institutionnels</span></li>
-                                <li>• <span style="color: var(--light-secondary);">Landing pages orientées conversion</span></li>
-                                <li>• <span style="color: var(--light-secondary);">Sites e-commerce essentiels</span></li>
+                                <li>• <span style="color: var(--light-secondary);">Landing pages orientées
+                                        conversion</span></li>
+                                <li>• <span style="color: var(--light-secondary);">Sites e-commerce essentiels</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -155,9 +166,6 @@
                             <h4 style="color: var(--light); margin-bottom: 1rem;">Outils maîtrisés</h4>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
                                 <span class="badge badge-secondary">Figma</span>
-                                <span class="badge badge-secondary">Adobe XD</span>
-                                <span class="badge badge-accent">Sketch</span>
-                                <span class="badge badge-accent">InVision</span>
                             </div>
                         </div>
                     </div>
@@ -183,10 +191,8 @@
                         <div style="margin-top: 2rem;">
                             <h4 style="color: var(--light); margin-bottom: 1rem;">Technologies utilisées</h4>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-                                <span class="badge badge-secondary">Kotlin</span>
-                                <span class="badge badge-secondary">Java</span>
-                                <span class="badge badge-accent">Android SDK</span>
-                                <span class="badge badge-accent">Jetpack Compose</span>
+                                <span class="badge badge-secondary">Flutter</span>
+                                <span class="badge badge-secondary">Dart</span>
                             </div>
                         </div>
                     </div>
@@ -237,10 +243,8 @@
                         <div style="margin-top: 2rem;">
                             <h4 style="color: var(--light); margin-bottom: 1rem;">Outils de création</h4>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-                                <span class="badge badge-secondary">Adobe Creative Suite</span>
                                 <span class="badge badge-secondary">Figma</span>
-                                <span class="badge badge-accent">Canva Pro</span>
-                                <span class="badge badge-accent">Affinity Designer</span>
+                                <span class="badge badge-secondary">Canva Pro</span>
                             </div>
                         </div>
                     </div>
@@ -265,28 +269,31 @@
                         <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=2290165203660" class="social-link"
+                            aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Navigation</h4>
+                    <h4>Navigation</h4> 
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="realisations.html">Réalisations</a></li>
-                        <li><a href="process.html">Processus</a></li>
-                        <li><a href="apropos.html">À propos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.php">Accueil</a></li>
+                        <li><a href="services.php">Services</a></li>
+                        <li><a href="realisations.php">Réalisations</a></li>
+                        <li><a href="process.php">Processus</a></li>
+                        <li><a href="apropos.php">À propos</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
                     <h4>Légal</h4>
                     <ul>
-                        <li><a href="mentions-legales.html">Mentions légales</a></li>
-                        <li><a href="confidentialite.html">Politique de confidentialité</a></li>
-                        <li><a href="cookies.html">Gestion des cookies</a></li>
+                        <li><a href="mentions-legales.php">Mentions légales</a></li>
+                        <li><a href="confidentialite.php">Politique de confidentialité</a></li>
+                        <li><a href="cookies.php">Gestion des cookies</a></li>
                     </ul>
                 </div>
 
@@ -295,13 +302,13 @@
                     <ul>
                         <li style="color: var(--gray-light);">Email : contact@peletech-nexus.com</li>
                         <li style="color: var(--gray-light);">Réponse sous 24h</li>
-                        <li><a href="contact.html">Formulaire de contact</a></li>
+                        <li><a href="contact.php">Formulaire de contact</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p style="color: var(--gray);">&copy; 2024 PêlêTech Nexus. Tous droits réservés.</p>
+                <p style="color: var(--gray);">&copy; 2026 PêlêTech Nexus. Tous droits réservés.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--gray-light);">
                     Marque fondée et pilotée par Pêlê Deb NASSAM
                 </p>

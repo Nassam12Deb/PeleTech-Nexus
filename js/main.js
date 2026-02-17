@@ -82,14 +82,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ============= ACTIVE NAV LINK =============
     function setActiveNavLink() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPage = window.location.pathname.split('/').pop() || 'index.php';
         document.querySelectorAll('.nav-link').forEach(link => {
             link.classList.remove('active');
             link.removeAttribute('aria-current');
             
             // Gestion spéciale pour l'accueil
-            if (currentPage === '' || currentPage === 'index.html' || currentPage === '/') {
-                if (link.getAttribute('href') === 'index.html' || link.getAttribute('href') === './') {
+            if (currentPage === '' || currentPage === 'index.php' || currentPage === '/') {
+                if (link.getAttribute('href') === 'index.php' || link.getAttribute('href') === './') {
                     link.classList.add('active');
                     link.setAttribute('aria-current', 'page');
                 }
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Préchargement des pages principales
     if ('connection' in navigator && navigator.connection.saveData === false) {
-        const pages = ['services.html', 'realisations.html', 'contact.html'];
+        const pages = ['services.php', 'realisations.php', 'contact.php'];
         pages.forEach(page => {
             const link = document.createElement('link');
             link.rel = 'prefetch';

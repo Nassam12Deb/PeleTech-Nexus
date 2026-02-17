@@ -16,19 +16,19 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">PêlêTech Nexus</a>
+            <a href="index.php" class="logo">PêlêTech Nexus</a>
             
             <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                 <span class="icon"><i class="fas fa-bars"></i></span>
             </button>
             
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Accueil</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="realisations.html" class="nav-link">Réalisations</a></li>
-                <li><a href="process.html" class="nav-link active">Processus</a></li>
-                <li><a href="apropos.html" class="nav-link">À propos</a></li>
-                <li><a href="contact.html" class="nav-link cta-nav">Démarrer un projet</a></li>
+                <li><a href="index.php" class="nav-link">Accueil</a></li>
+                <li><a href="services.php" class="nav-link">Services</a></li>
+                <li><a href="realisations.php" class="nav-link">Réalisations</a></li>
+                <li><a href="process.php" class="nav-link active">Processus</a></li>
+                <li><a href="apropos.php" class="nav-link">À propos</a></li>
+                <li><a href="contact.php" class="nav-link cta-nav">Démarrer un projet</a></li>
             </ul>
         </div>
     </nav>
@@ -50,7 +50,7 @@
             <div class="container">
                 <div class="grid grid-5" style="gap: 1.5rem; margin-bottom: 4rem;">
                     <div class="card" style="text-align: center; padding: 1.5rem;">
-                        <div class="badge badge-primary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 1</div>
+                        <div class="badge badge-secondary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 1</div>
                         <h4 style="color: var(--light); margin-bottom: 0.5rem;">Analyse</h4>
                         <p style="color: var(--light-secondary); font-size: 0.9rem;">Compréhension approfondie</p>
                     </div>
@@ -60,7 +60,7 @@
                     </div>
                     
                     <div class="card" style="text-align: center; padding: 1.5rem;">
-                        <div class="badge badge-primary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 2</div>
+                        <div class="badge badge-secondary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 2</div>
                         <h4 style="color: var(--light); margin-bottom: 0.5rem;">Conception</h4>
                         <p style="color: var(--light-secondary); font-size: 0.9rem;">Architecture & spécifications</p>
                     </div>
@@ -70,7 +70,7 @@
                     </div>
                     
                     <div class="card" style="text-align: center; padding: 1.5rem;">
-                        <div class="badge badge-primary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 3</div>
+                        <div class="badge badge-secondary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 3</div>
                         <h4 style="color: var(--light); margin-bottom: 0.5rem;">Développement</h4>
                         <p style="color: var(--light-secondary); font-size: 0.9rem;">Implémentation & tests</p>
                     </div>
@@ -80,7 +80,7 @@
                     </div>
                     
                     <div class="card" style="text-align: center; padding: 1.5rem;">
-                        <div class="badge badge-primary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 4</div>
+                        <div class="badge badge-secondary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 4</div>
                         <h4 style="color: var(--light); margin-bottom: 0.5rem;">Validation</h4>
                         <p style="color: var(--light-secondary); font-size: 0.9rem;">Tests & ajustements</p>
                     </div>
@@ -90,7 +90,7 @@
                     </div>
                     
                     <div class="card" style="text-align: center; padding: 1.5rem;">
-                        <div class="badge badge-primary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 5</div>
+                        <div class="badge badge-secondary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 5</div>
                         <h4 style="color: var(--light); margin-bottom: 0.5rem;">Livraison</h4>
                         <p style="color: var(--light-secondary); font-size: 0.9rem;">Déploiement & support</p>
                     </div>
@@ -103,7 +103,7 @@
             <div class="container">
                 <div class="grid grid-2">
                     <div>
-                        <div class="badge badge-primary" style="margin-bottom: 1rem;">Étape 1</div>
+                        <div class="badge badge-secondary" style="margin-bottom: 1rem;">Étape 1</div>
                         <h2 style="color: var(--light); margin-bottom: 1rem;">Analyse et cadrage</h2>
                         <p style="color: var(--light-secondary); margin-bottom: 1.5rem;">
                             Nous prenons le temps de comprendre en profondeur vos besoins, objectifs, contraintes et contexte métier.
@@ -182,7 +182,7 @@
                     </div>
                     
                     <div>
-                        <div class="badge badge-primary" style="margin-bottom: 1rem;">Étape 2</div>
+                        <div class="badge badge-secondary" style="margin-bottom: 1rem;">Étape 2</div>
                         <h2 style="color: var(--light); margin-bottom: 1rem;">Conception et architecture</h2>
                         <p style="color: var(--light-secondary); margin-bottom: 1.5rem;">
                             Transformation des besoins en spécifications techniques détaillées et en architecture solide.
@@ -226,7 +226,7 @@
             <div class="container">
                 <div class="grid grid-2">
                     <div>
-                        <div class="badge badge-primary" style="margin-bottom: 1rem;">Étape 3</div>
+                        <div class="badge badge-secondary" style="margin-bottom: 1rem;">Étape 3</div>
                         <h2 style="color: var(--light); margin-bottom: 1rem;">Développement et tests</h2>
                         <p style="color: var(--light-secondary); margin-bottom: 1.5rem;">
                             Implémentation rigoureuse avec tests continus et revues de code pour garantir la qualité.
@@ -311,7 +311,7 @@
                     </div>
                     
                     <div>
-                        <div class="badge badge-primary" style="margin-bottom: 1rem;">Étape 4</div>
+                        <div class="badge badge-secondary" style="margin-bottom: 1rem;">Étape 4</div>
                         <h2 style="color: var(--light); margin-bottom: 1rem;">Validation et ajustements</h2>
                         <p style="color: var(--light-secondary); margin-bottom: 1.5rem;">
                             Phase de tests intensifs et ajustements pour garantir que le produit correspond parfaitement à vos attentes.
@@ -356,7 +356,7 @@
             <div class="container">
                 <div class="grid grid-2">
                     <div>
-                        <div class="badge badge-primary" style="margin-bottom: 1rem;">Étape 5</div>
+                        <div class="badge badge-secondary" style="margin-bottom: 1rem;">Étape 5</div>
                         <h2 style="color: var(--light); margin-bottom: 1rem;">Livraison et accompagnement</h2>
                         <p style="color: var(--light-secondary); margin-bottom: 1.5rem;">
                             Déploiement en production, formation et support pour garantir une transition sans accroc.
@@ -451,7 +451,7 @@
                         <p style="color: var(--light-secondary); margin-bottom: 2rem;">
                             Discutons de votre projet et établissons ensemble un planning réaliste et transparent.
                         </p>
-                        <a href="contact.html" class="btn btn-primary btn-large">Planifier un appel découverte</a>
+                        <a href="contact.php" class="btn btn-primary btn-large">Planifier un appel découverte</a>
                     </div>
                 </div>
             </div>
@@ -478,7 +478,8 @@
                         <a href="#" class="social-link" aria-label="YouTube">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="WhatsApp">
+                        <a href="https://api.whatsapp.com/send?phone=2290165203660" class="social-link"
+                            aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -487,21 +488,21 @@
                 <div class="footer-col">
                     <h4>Navigation</h4>
                     <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="realisations.html">Réalisations</a></li>
-                        <li><a href="process.html">Processus</a></li>
-                        <li><a href="apropos.html">À propos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.php">Accueil</a></li>
+                        <li><a href="services.php">Services</a></li>
+                        <li><a href="realisations.php">Réalisations</a></li>
+                        <li><a href="process.php">Processus</a></li>
+                        <li><a href="apropos.php">À propos</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h4>Légal</h4>
                     <ul>
-                        <li><a href="mentions-legales.html">Mentions légales</a></li>
-                        <li><a href="confidentialite.html">Politique de confidentialité</a></li>
-                        <li><a href="cookies.html">Gestion des cookies</a></li>
+                        <li><a href="mentions-legales.php">Mentions légales</a></li>
+                        <li><a href="confidentialite.php">Politique de confidentialité</a></li>
+                        <li><a href="cookies.php">Gestion des cookies</a></li>
                     </ul>
                 </div>
                 
@@ -510,13 +511,13 @@
                     <ul>
                         <li style="color: var(--gray-light);">Email: contact@peletech-nexus.com</li>
                         <li style="color: var(--gray-light);">Réponse sous 24h</li>
-                        <li><a href="contact.html">Formulaire de contact</a></li>
+                        <li><a href="contact.php">Formulaire de contact</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p style="color: var(--gray);">&copy; 2024 PêlêTech Nexus. Tous droits réservés.</p>
+                <p style="color: var(--gray);">&copy; 2026 PêlêTech Nexus. Tous droits réservés.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--gray-light);">Marque fondée et pilotée par Pêlê Deb NASSAM</p>
             </div>
         </div>

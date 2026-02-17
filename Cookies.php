@@ -10,8 +10,8 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">PêlêTech Nexus</a>
-            <a href="index.html" class="btn btn-small btn-secondary"><i class="fas fa-arrow-left"></i> Retour au site</a>
+            <a href="index.php" class="logo">PêlêTech Nexus</a>
+            <a href="index.php" class="btn btn-small btn-secondary"><i class="fas fa-arrow-left"></i> Retour au site</a>
         </div>
     </nav>
 
@@ -158,7 +158,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p style="color: var(--gray);"><i class="far fa-copyright"></i> 2024 PêlêTech Nexus. Tous droits réservés.</p>
+                <p style="color: var(--gray);"><i class="far fa-copyright"></i> 2026 PêlêTech Nexus. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
