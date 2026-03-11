@@ -11,6 +11,102 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <style>
+        /* Améliorations pour la timeline des étapes */
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-card {
+            flex: 1 1 140px;
+            max-width: 180px;
+            background: rgba(20, 24, 39, 0.8);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(138, 111, 232, 0.2);
+            border-radius: 20px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .step-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--primary);
+            box-shadow: 0 20px 30px rgba(138, 111, 232, 0.3);
+            background: rgba(30, 35, 55, 0.9);
+        }
+
+        .step-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 40px;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .step-card h4 {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .step-card p {
+            color: var(--light-secondary);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .step-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            opacity: 0.7;
+            flex-shrink: 0;
+        }
+
+        /* Sur mobile, on empile les cartes et on cache les flèches */
+        @media (max-width: 768px) {
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            .step-card {
+                max-width: 280px;
+                width: 100%;
+            }
+            .step-arrow {
+                display: none;
+            }
+        }
+
+        /* Petit texte d'invite */
+        .steps-intro {
+            text-align: center;
+            color: var(--light-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-bottom: 1px dashed rgba(138, 111, 232, 0.3);
+            padding-bottom: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -45,61 +141,60 @@
             </div>
         </section>
 
-        <!-- Timeline / Étapes -->
-        <section id="process-timeline">
+        <!-- Timeline / Étapes améliorée -->
+        <section id="process-timeline" class="bg-dark-light">
             <div class="container">
-                <div class="grid grid-5" style="gap: 1.5rem; margin-bottom: 4rem;">
-                    <div class="card" style="text-align: center; padding: 1.5rem;">
-                        <div class="badge badge-secondary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 1</div>
-                        <h4 style="color: var(--light); margin-bottom: 0.5rem;">Analyse</h4>
-                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Compréhension approfondie</p>
+                <!-- Petit texte d'invite -->
+                <p class="steps-intro">
+                    <i class="fas fa-hand-point-right" style="margin-right: 0.5rem; color: var(--primary);"></i>
+                    Cliquez sur une étape pour explorer les détails
+                </p>
+
+                <div class="process-steps">
+                    <!-- Étape 1 -->
+                    <div class="step-card" onclick="document.getElementById('etape-1').scrollIntoView({behavior: 'smooth'})">
+                        <span class="step-badge">Étape 1</span>
+                        <h4>Analyse</h4>
+                        <p>Compréhension approfondie</p>
                     </div>
-                    
-                    <div style="display: flex; align-items: center; justify-content: center;">
-                        <div style="width: 30px; height: 2px; background: linear-gradient(135deg, var(--primary), var(--secondary));"></div>
+                    <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+                    <!-- Étape 2 -->
+                    <div class="step-card" onclick="document.getElementById('etape-2').scrollIntoView({behavior: 'smooth'})">
+                        <span class="step-badge">Étape 2</span>
+                        <h4>Conception</h4>
+                        <p>Architecture & spécifications</p>
                     </div>
-                    
-                    <div class="card" style="text-align: center; padding: 1.5rem;">
-                        <div class="badge badge-secondary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 2</div>
-                        <h4 style="color: var(--light); margin-bottom: 0.5rem;">Conception</h4>
-                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Architecture & spécifications</p>
+                    <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+                    <!-- Étape 3 -->
+                    <div class="step-card" onclick="document.getElementById('etape-3').scrollIntoView({behavior: 'smooth'})">
+                        <span class="step-badge">Étape 3</span>
+                        <h4>Développement</h4>
+                        <p>Implémentation & tests</p>
                     </div>
-                    
-                    <div style="display: flex; align-items: center; justify-content: center;">
-                        <div style="width: 30px; height: 2px; background: linear-gradient(135deg, var(--primary), var(--secondary));"></div>
+                    <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+                    <!-- Étape 4 -->
+                    <div class="step-card" onclick="document.getElementById('etape-4').scrollIntoView({behavior: 'smooth'})">
+                        <span class="step-badge">Étape 4</span>
+                        <h4>Validation</h4>
+                        <p>Tests & ajustements</p>
                     </div>
-                    
-                    <div class="card" style="text-align: center; padding: 1.5rem;">
-                        <div class="badge badge-secondary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 3</div>
-                        <h4 style="color: var(--light); margin-bottom: 0.5rem;">Développement</h4>
-                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Implémentation & tests</p>
-                    </div>
-                    
-                    <div style="display: flex; align-items: center; justify-content: center;">
-                        <div style="width: 30px; height: 2px; background: linear-gradient(135deg, var(--primary), var(--secondary));"></div>
-                    </div>
-                    
-                    <div class="card" style="text-align: center; padding: 1.5rem;">
-                        <div class="badge badge-secondary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 4</div>
-                        <h4 style="color: var(--light); margin-bottom: 0.5rem;">Validation</h4>
-                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Tests & ajustements</p>
-                    </div>
-                    
-                    <div style="display: flex; align-items: center; justify-content: center;">
-                        <div style="width: 30px; height: 2px; background: linear-gradient(135deg, var(--primary), var(--secondary));"></div>
-                    </div>
-                    
-                    <div class="card" style="text-align: center; padding: 1.5rem;">
-                        <div class="badge badge-secondary" style="margin-bottom: 1rem; font-size: 0.7rem; padding: 0.5rem 0.75rem;">Étape 5</div>
-                        <h4 style="color: var(--light); margin-bottom: 0.5rem;">Livraison</h4>
-                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Déploiement & support</p>
+                    <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+
+                    <!-- Étape 5 -->
+                    <div class="step-card" onclick="document.getElementById('etape-5').scrollIntoView({behavior: 'smooth'})">
+                        <span class="step-badge">Étape 5</span>
+                        <h4>Livraison</h4>
+                        <p>Déploiement & support</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Étape 1 -->
-        <section id="etape-1" class="bg-dark-light">
+        <!-- Étape 1 (contenu inchangé) -->
+        <section id="etape-1">
             <div class="container">
                 <div class="grid grid-2">
                     <div>
@@ -166,7 +261,7 @@
         </section>
 
         <!-- Étape 2 -->
-        <section id="etape-2">
+        <section id="etape-2" class="bg-dark-light">
             <div class="container">
                 <div class="grid grid-2">
                     <div class="card card-gradient">
@@ -222,7 +317,7 @@
         </section>
 
         <!-- Étape 3 -->
-        <section id="etape-3" class="bg-dark-light">
+        <section id="etape-3">
             <div class="container">
                 <div class="grid grid-2">
                     <div>
@@ -295,7 +390,7 @@
         </section>
 
         <!-- Étape 4 -->
-        <section id="etape-4">
+        <section id="etape-4" class="bg-dark-light">
             <div class="container">
                 <div class="grid grid-2">
                     <div class="card card-gradient">
@@ -352,7 +447,7 @@
         </section>
 
         <!-- Étape 5 -->
-        <section id="etape-5" class="bg-dark-light">
+        <section id="etape-5">
             <div class="container">
                 <div class="grid grid-2">
                     <div>
@@ -466,13 +561,13 @@
                     <h4>PêlêTech Nexus</h4>
                     <p style="color: var(--gray-light); margin-bottom: 1.5rem;">Silence structuré. Code incarné. Le sens, sous la surface.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
+                        <a href="https://www.facebook.com/people/PêlêTech-Nexus/61582899320642/" class="social-link" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/peledebnassam" class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/peledebnassam?igsh=MTIycDV5eGZ6dmR2Mw==" class="social-link" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://api.whatsapp.com/send?phone=2290165203660" class="social-link"
@@ -506,7 +601,7 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li style="color: var(--gray-light);">Email: contact@peletech-nexus.com</li>
+                        <li style="color: var(--gray-light);">Email: contact.pelenexus@gmail.com</li>
                         <li style="color: var(--gray-light);">Réponse sous 24h</li>
                         <li><a href="contact.php">Formulaire de contact</a></li>
                     </ul>
@@ -525,5 +620,16 @@
     </button>
 
     <script src="js/main.js"></script>
+    <script>
+        // S'assurer que le défilement fluide fonctionne même si le lien est cliqué avant le chargement complet
+        document.querySelectorAll('.step-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('data-target');
+                if (targetId) {
+                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -23,8 +23,8 @@
 
         #services-preview .card {
             display: flex;
-            flex-direction: column;O
-            height: 100%;
+            flex-direction: column;
+            O height: 100%;
         }
 
         #services-preview .card p {
@@ -219,7 +219,8 @@
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(138, 111, 232, 0.1), rgba(79, 163, 217, 0.1)); border-radius: var(--radius-xl);">
                         </div>
                         <div class="icon icon-lg icon-gradient icon-circle" style="z-index: 1;">
-                            <i class="fas fa-layer-group"></i>
+                            <!-- <i class="fas fa-layer-group"></i> -->
+                             <img src="assets/profil.png" alt="PêlêTech Nexus" style="height: 300px; width: 300px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
                         </div>
                     </div>
                 </div>
@@ -462,15 +463,17 @@
                     <p style="color: var(--gray-light); margin-bottom: 1.5rem;">Silence structuré. Code incarné. Le
                         sens, sous la surface.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
+                        <a href="https://www.facebook.com/people/PêlêTech-Nexus/61582899320642/" class="social-link"
+                            aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/peledebnassam" class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/peledebnassam?igsh=MTIycDV5eGZ6dmR2Mw==" class="social-link"
+                            aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
-                        </a>              
+                        </a>
                         <a href="https://api.whatsapp.com/send?phone=2290165203660" class="social-link"
                             aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-whatsapp"></i>
@@ -502,7 +505,7 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li style="color: var(--gray-light);">Email: contact@peletech-nexus.com</li>
+                        <li style="color: var(--gray-light);">Email: contact.pelenexus@gmail.com</li>
                         <li style="color: var(--gray-light);">Réponse sous 24h</li>
                         <li><a href="contact.php">Formulaire de contact</a></li>
                     </ul>

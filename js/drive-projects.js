@@ -10,10 +10,9 @@ const cache = new Map();
 async function getFolderFiles(folderId) {
     const cacheKey = `files_${folderId}`;
     
-    // Vérifier le cache
     if (cache.has(cacheKey)) {
         const cached = cache.get(cacheKey);
-        if (Date.now() - cached.timestamp < 300000) { // 5 minutes
+        if (Date.now() - cached.timestamp < 300000) {
             console.log(`🔦 Cache hit: ${folderId}`);
             return cached.data;
         }
@@ -92,16 +91,38 @@ async function extractFilesFromProject(projectFolderId) {
             }
 
             const fileType = getFileType(file.mimeType);
+
+            // Log diagnostic — visible dans la console du navigateur
+            if (file.mimeType && file.mimeType.startsWith('image/')) {
+                console.log('📷 Image brute API:', {
+                    id: file.id,
+                    name: file.name,
+                    thumbnailLink: file.thumbnailLink || 'ABSENT',
+                    webContentLink: file.webContentLink || 'ABSENT'
+                });
+            }
+
+            // Priorité : thumbnailLink signé (lh3.googleusercontent.com) — seule URL qui passe sans CORS
+            // Si absent : le dossier Drive n'est pas partagé publiquement
+            let thumbUrl = null;
+            if (file.mimeType && file.mimeType.startsWith('image/')) {
+                if (file.thumbnailLink) {
+                    thumbUrl = file.thumbnailLink.replace(/=s\d+$/, '=s1000');
+                } else {
+                    // Fallback URL publique — nécessite partage "Tout le monde avec le lien"
+                    thumbUrl = `https://drive.google.com/thumbnail?id=${file.id}&sz=w800`;
+                }
+            }
+
             const fileInfo = {
                 id: file.id,
                 name: file.name,
                 mimeType: file.mimeType,
                 type: fileType,
                 size: formatFileSize(file.size || 0),
-                url: file.webContentLink || `https://drive.google.com/uc?id=${file.id}&export=download`,
-                thumbnail: file.mimeType.startsWith('image/') 
-                    ? `https://drive.google.com/thumbnail?id=${file.id}&sz=w400`
-                    : null,
+                url: `https://drive.google.com/file/d/${file.id}/view`,
+                thumbnail: thumbUrl,
+                hasThumbnailLink: !!file.thumbnailLink,
                 icon: getFileIcon(file.mimeType),
                 driveViewUrl: `https://drive.google.com/file/d/${file.id}/view`,
                 createdTime: file.createdTime,
@@ -130,10 +151,8 @@ async function extractFilesFromProject(projectFolderId) {
 // Récupérer les métadonnées d'un projet
 async function getProjectMetadata(projectId) {
     try {
-        // Récupérer les fichiers pour les statistiques
         const files = await extractFilesFromProject(projectId);
         
-        // Récupérer les métadonnées depuis la configuration
         const projectDescription = window.projectDescriptions?.[projectId] || {
             title: 'Projet',
             description: 'Projet réalisé avec PêlêTech Nexus.',
@@ -261,7 +280,6 @@ function clearCache() {
     console.log('🧹 Cache vidé');
 }
 
-// API publique
 window.DriveProjects = {
     getProjectMetadata,
     clearCache,

@@ -52,8 +52,7 @@
         </section>
 
         <!-- Formulaire de contact -->
-        <!-- Formulaire de contact -->
-        <section id="contact-form">
+        <section id="contact-form" class="bg-dark-light">
             <div class="container">
                 <div class="grid grid-2">
                     <div>
@@ -119,14 +118,9 @@
                                     style="font-weight: normal; font-size: 0.9rem; color: var(--light-secondary);">
                                     <input type="checkbox" id="privacy" name="privacy" required
                                         style="margin-right: 0.5rem; accent-color: var(--primary);">
-                                    J'accepte la politique de confidentialité
+                                    J'accepte la <a href="confidentialite.php">politique de confidentialité</a>
                                 </label>
                             </div>
-
-                            <input type="hidden" id="date" name="date">
-                            <input type="hidden" id="page" name="page" value="Contact - PêlêTech Nexus">
-                            <input type="hidden" id="user_agent" name="user_agent">
-                            <input type="hidden" id="referrer" name="referrer">
 
                             <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
                                 <span id="submitText">Envoyer la demande</span>
@@ -168,7 +162,7 @@
                                     <p style="color: var(--light); margin: 0;">
                                         <span style="color: var(--primary); font-weight: 600;"><i
                                                 class="fas fa-envelope"></i> Email :</span>
-                                        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3e5d51504a5f5d4a7e4e5b525b4a5b5d5613505b464b4d105d5153">[email&#160;protected]</a><br>
+                                        contact.pelenexus@gmail.com<br>
                                         <span style="color: var(--secondary); font-weight: 600;"><i
                                                 class="fab fa-whatsapp"></i> WhatsApp :</span> +229 01 57 47 57 50
                                     </p>
@@ -200,7 +194,7 @@
         </section>
 
         <!-- FAQ -->
-        <section id="faq" class="bg-dark-light">
+        <section id="faq">
             <div class="container">
                 <h2 class="section-title">Questions fréquentes</h2>
                 <p class="section-subtitle">Trouvez rapidement des réponses à vos interrogations les plus courantes.</p>
@@ -211,10 +205,10 @@
                             de temps prend un projet ?</h4>
                         <p style="color: var(--light-secondary);">La durée dépend du périmètre et de la complexité du
                             projet.
-                            Un projet simple peut être livré en quelques semaines, tandis qu’une solution plus complète
+                            Un projet simple peut être livré en quelques semaines, tandis qu'une solution plus complète
                             nécessite plusieurs phases réparties sur plusieurs mois.
 
-                            Un planning clair est toujours défini après l’analyse initiale.</p>
+                            Un planning clair est toujours défini après l'analyse initiale.</p>
                     </div>
 
                     <div class="card">
@@ -222,9 +216,9 @@
                             Quelle est votre fourchette de prix ?</h4>
                         <p style="color: var(--light-secondary);">Les tarifs varient selon les objectifs, le périmètre
                             et les contraintes du projet.
-                            Chaque mission fait l’objet d’une analyse préalable et d’un devis personnalisé.
+                            Chaque mission fait l'objet d'une analyse préalable et d'un devis personnalisé.
 
-                            L’objectif est de proposer une solution cohérente, durable et adaptée à vos enjeux.</p>
+                            L'objectif est de proposer une solution cohérente, durable et adaptée à vos enjeux.</p>
                     </div>
 
                     <div class="card">
@@ -241,7 +235,7 @@
                         <h4 style="color: var(--primary); margin-bottom: 0.75rem;"><i class="fas fa-headset"></i>
                             Proposez-vous un support après la livraison ?</h4>
                         <p style="color: var(--light-secondary);">Un accompagnement est prévu après la livraison afin
-                            d’assurer la stabilité
+                            d'assurer la stabilité
                             et la bonne prise en main du projet.
 
                             Selon les besoins, des options de support et de maintenance peuvent être proposées.
@@ -261,13 +255,13 @@
                     <p style="color: var(--gray-light); margin-bottom: 1.5rem;">Silence structuré. Code incarné. Le
                         sens, sous la surface.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
+                        <a href="https://www.facebook.com/people/PêlêTech-Nexus/61582899320642/</a>" class="social-link" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/peledebnassam" class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/peledebnassam?igsh=MTIycDV5eGZ6dmR2Mw==" class="social-link" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://api.whatsapp.com/send?phone=2290165203660" class="social-link"
@@ -301,7 +295,7 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li style="color: var(--gray-light);">Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9efdf1f0eafffdeadeeefbf2fbeafbfdf6b3f0fbe6ebedb0fdf1f3">[email&#160;protected]</a></li>
+                        <li style="color: var(--gray-light);">Email: contact.pelenexus@gmail.com</li>
                         <li style="color: var(--gray-light);">Réponse sous 24h</li>
                         <li><a href="contact.php">Formulaire de contact</a></li>
                     </ul>
@@ -320,101 +314,16 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
-    <script>
-        // Gestion améliorée du formulaire de contact
-        document.addEventListener('DOMContentLoaded', function () {
-            const contactForm = document.getElementById('contactForm');
-            const submitText = document.getElementById('submitText');
-            const submitSpinner = document.getElementById('submitSpinner');
+    <!--
+        ORDRE DE CHARGEMENT DES SCRIPTS :
+        1. main.js       — navigation, scroll, animations (sans formulaire)
+        2. email-service.js — service d'envoi EmailJS + validation
+        3. contact-form.js  — gestionnaire unique du formulaire (nouveau)
+        Le <script> inline qui gérait le formulaire a été supprimé.
+    -->
+    <script src="js/main.js"></script>
+    <script src="js/email-service.js"></script>
+    <script src="js/contact-form.js"></script>
+</body>
 
-            // Initialiser les champs cachés
-            const dateField = document.getElementById('date');
-            const userAgentField = document.getElementById('user_agent');
-            const referrerField = document.getElementById('referrer');
-
-            if (dateField) dateField.value = new Date().toISOString();
-            if (userAgentField) userAgentField.value = navigator.userAgent;
-            if (referrerField) referrerField.value = document.referrer || 'Direct';
-
-            if (contactForm) {
-                contactForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
-
-                    let isValid = true;
-                    const requiredFields = contactForm.querySelectorAll('[required]');
-
-                    // Réinitialiser les styles d'erreur
-                    requiredFields.forEach(field => {
-                        field.style.borderColor = '';
-                        const errorMsg = field.nextElementSibling;
-                        if (errorMsg && errorMsg.classList.contains('error-message')) {
-                            errorMsg.remove();
-                        }
-                    });
-
-                    // Validation
-                    requiredFields.forEach(field => {
-                        if (!field.value.trim()) {
-                            field.style.borderColor = 'var(--error)';
-                            showError(field, 'Ce champ est obligatoire');
-                            isValid = false;
-                        }
-
-                        // Validation email spécifique
-                        if (field.type === 'email' && field.value) {
-                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                            if (!emailRegex.test(field.value)) {
-                                field.style.borderColor = 'var(--error)';
-                                showError(field, 'Veuillez entrer une adresse email valide');
-                                isValid = false;
-                            }
-                        }
-                    });
-
-                    if (isValid) {
-                        // Simulation d'envoi
-                        submitText.style.display = 'none';
-                        submitSpinner.style.display = 'block';
-
-                        setTimeout(() => {
-                            // Message de succès stylisé
-                            const successMessage = document.createElement('div');
-                            successMessage.style.cssText = `
-                                background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));
-                                border: 1px solid rgba(16, 185, 129, 0.3);
-                                border-radius: var(--radius-lg);
-                                padding: 1.5rem;
-                                margin-top: 1.5rem;
-                                color: var(--light);
-                                text-align: center;
-                            `;
-                            successMessage.innerHTML = `
-                                <h4 style="color: var(--success); margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> Message envoyé avec succès !</h4>
-                                <p style="color: var(--light-secondary);">Merci pour votre message. Nous vous répondrons dans les 24h.</p>
-                            `;
-
-                            contactForm.parentNode.insertBefore(successMessage, contactForm.nextSibling);
-                            contactForm.reset();
-
-                            // Restaurer le bouton
-                            submitText.style.display = 'inline';
-                            submitSpinner.style.display = 'none';
-
-                            // Supprimer le message après 5 secondes
-                            setTimeout(() => {
-                                successMessage.style.opacity = '0';
-                                successMessage.style.transition = 'opacity 0.5s ease';
-                                setTimeout(() => successMessage.remove(), 500);
-                            }, 5000);
-                        }, 1500);
-                    }
-                });
-            }
-
-            function showError(field, message) {
-                const errorMsg = document.createElement('div');
-                errorMsg.className = 'error-message';
-                errorMsg.style.cssText = `
-                    color: var(--error);
- 
+</html>

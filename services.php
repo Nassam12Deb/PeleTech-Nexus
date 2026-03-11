@@ -253,6 +253,36 @@
             </div>
         </section>
 
+        <!-- ⭐ Section ComeUp - harmonisée avec la charte PêlêTech Nexus -->
+        <section class="bg-darker" style="padding: 60px 0;">
+            <div class="container">
+                <div class="card card-gradient"
+                    style="text-align: center; padding: 4rem 2rem; border: 1px solid rgba(138, 111, 232, 0.3);">
+                    <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--light);">Prêt à démarrer votre
+                        projet ?</h2>
+                    <p style="color: var(--light-secondary); font-size: 1.1rem; margin-bottom: 2rem;">
+                        Découvrez mes services détaillés et commandez directement sur ComeUp
+                    </p>
+
+                    <a href="https://comeup.com/fr/@peledebnassam" class="btn btn-primary btn-large" target="_blank"
+                        rel="noopener noreferrer">
+                        Voir mes services sur ComeUp →
+                    </a>
+
+                    <!-- Ligne des garanties avec icônes Font Awesome -->
+                    <p
+                        style="color: var(--light-secondary); margin-top: 1.5rem; font-size: 0.95rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                        <span><i class="fas fa-bolt" style="color: var(--primary); margin-right: 0.3rem;"></i> Réponse
+                            en moins de 2h</span>
+                        <span><i class="fas fa-box" style="color: var(--primary); margin-right: 0.3rem;"></i> Livraison
+                            garantie</span>
+                        <span><i class="fas fa-thumbs-up" style="color: var(--primary); margin-right: 0.3rem;"></i>
+                            Support inclus</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -265,9 +295,10 @@
                         Silence structuré. Code incarné. Le sens, sous la surface.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/people/PêlêTech-Nexus/61582899320642/" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/peledebnassam" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/peledebnassam?igsh=MTIycDV5eGZ6dmR2Mw==" class="social-link"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://api.whatsapp.com/send?phone=2290165203660" class="social-link"
                             aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-whatsapp"></i>
@@ -276,7 +307,7 @@
                 </div>
 
                 <div class="footer-col">
-                    <h4>Navigation</h4> 
+                    <h4>Navigation</h4>
                     <ul>
                         <li><a href="index.php">Accueil</a></li>
                         <li><a href="services.php">Services</a></li>
@@ -299,7 +330,7 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li style="color: var(--gray-light);">Email : contact@peletech-nexus.com</li>
+                        <li style="color: var(--gray-light);">Email : contact.pelenexus@gmail.com</li>
                         <li style="color: var(--gray-light);">Réponse sous 24h</li>
                         <li><a href="contact.php">Formulaire de contact</a></li>
                     </ul>

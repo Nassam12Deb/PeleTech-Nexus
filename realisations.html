@@ -182,6 +182,7 @@
             position: relative;
             border-radius: 8px;
             overflow: hidden;
+            cursor: pointer;
             transition: transform 0.3s;
             aspect-ratio: 4/3;
             background: var(--dark-light);
@@ -443,6 +444,100 @@
             gap: 1rem;
         }
 
+        /* Image Viewer - CORRIGÉ */
+        .galerie-image-viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .galerie-image-viewer.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .galerie-image-viewer-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .galerie-image-viewer-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .galerie-image-viewer-close {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: none;
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            z-index: 2001;
+        }
+
+        .galerie-image-viewer-close:hover {
+            background: rgba(138, 111, 232, 0.8);
+            transform: scale(1.1);
+        }
+
+        .galerie-image-viewer-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            z-index: 2001;
+        }
+
+        .galerie-image-viewer-nav:hover {
+            background: rgba(138, 111, 232, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .galerie-image-viewer-nav.prev {
+            left: 20px;
+        }
+
+        .galerie-image-viewer-nav.next {
+            right: 20px;
+        }
+
         /* Bouton "Voir la galerie" */
         .btn-galerie {
             display: inline-flex;
@@ -503,6 +598,19 @@
             margin-bottom: 1rem;
         }
 
+        /* Info sur l'image */
+        .galerie-image-info {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2001;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .galerie-modal-content {
@@ -546,11 +654,31 @@
             .galerie-file-stats {
                 justify-content: center;
             }
+
+            .galerie-image-viewer-nav {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+
+            .galerie-image-viewer-nav.prev {
+                left: 10px;
+            }
+
+            .galerie-image-viewer-nav.next {
+                right: 10px;
+            }
         }
 
         @media (max-width: 480px) {
             .galerie-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .galerie-image-viewer-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
         }
     </style>
@@ -606,16 +734,13 @@
         <!-- Projet: Site Vitrine - Éclat d'Identité Fashion Style -->
         <section id="projets" class="bg-dark-light">
             <div class="container">
-                <!-- Premier projet avec margin-top ajouté pour l'espacement -->
-                <div class="projet-card card animate-slide-up" data-category="web ui_ux maquettes"
-                    style="margin-top: 4rem;">
+                <div class="projet-card card animate-slide-up" data-category="web">
                     <div class="grid grid-2">
                         <div>
                             <div class="badge badge-primary" style="margin-bottom: 1rem;">Développement Web</div>
                             <h3 style="color: var(--light); margin-bottom: 0.5rem;">Site Vitrine - Éclat d'Identité
                                 Fashion Style</h3>
-                            <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 1.5rem;">Créatrice &
-                                Styliste • 7 semaines</h3>
+                            <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 1.5rem;">Créatrice & Styliste • 5 semaines</h3>
 
                             <div style="margin-bottom: 2rem;">
                                 <h4 style="color: var(--light); margin-bottom: 0.75rem;">Le défi</h4>
@@ -642,8 +767,8 @@
                                     </li>
                                     <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
                                         <span style="position: absolute; left: 0; color: var(--primary);">•</span>
-                                        <span style="color: var(--light-secondary);">Présentation des 6 services (Haute
-                                            Couture, Conception Masculine, Mode Enfant, Tenues Traditionnelles, Transformation & Rénovation)</span>
+                                        <span style="color: var(--light-secondary);">Présentation des 3 services (Haute
+                                            Couture, Mode Enfant, Transformation)</span>
                                     </li>
                                     <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
                                         <span style="position: absolute; left: 0; color: var(--primary);">•</span>
@@ -659,15 +784,14 @@
                                     <span class="badge badge-secondary">HTML5</span>
                                     <span class="badge badge-secondary">CSS3</span>
                                     <span class="badge badge-secondary">JavaScript</span>
-                                    <span class="badge badge-secondary">Google Drive API</span>
-                                    <span class="badge badge-secondary">Responsive Design</span>
+                                    <span class="badge badge-accent">Google Drive API</span>
+                                    <span class="badge badge-accent">Responsive Design</span>
                                 </div>
                             </div>
 
                             <!-- Bouton pour ouvrir la galerie Drive -->
                             <div style="margin-top: 2rem;">
-                                <button class="btn-galerie" data-drive-id="12dksfIsLuGqhOFor8uTJjXf9_f_8pZE5"
-                                    data-project-title="Site Vitrine - Éclat d'Identité Fashion Style">
+                                <button class="btn-galerie" data-drive-id="1WaTX4zZx3ztPpORmp8qQCNZofyeenioP">
                                     <i class="fas fa-images"></i>
                                     <span>Voir la galerie du projet</span>
                                 </button>
@@ -717,12 +841,12 @@
                                     style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(138, 111, 232, 0.2);">
                                     <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Retour client</h4>
                                     <p style="color: var(--light-secondary); font-style: italic;">
-                                        "Pêlê Deb a créé un site qui incarne parfaitement l'essence de mon travail. C'est
+                                        "Pêlê a créé un site qui incarne parfaitement l'essence de mon travail. C'est
                                         élégant, facile à naviguer, et j'ai reçu plusieurs demandes de clients grâce à
                                         cette présence en ligne. Un travail de qualité avec une écoute exceptionnelle."
                                     </p>
                                     <p style="color: var(--light); margin-top: 0.5rem; font-weight: 600;">
-                                        — Hendurelle Iyabo ADEOYE (Rép. Bénin), Créatrice & Styliste (EIFS)
+                                        — EIFS, Styliste & Couturière
                                     </p>
                                 </div>
                             </div>
@@ -730,23 +854,22 @@
                     </div>
                 </div>
 
-                <div class="projet-card card animate-slide-up" data-category="design supports"
-                    style="margin-top: 4rem;">
+
+                <!-- Projet 1 -->
+                <div class="projet-card card animate-slide-up" data-category="web">
                     <div class="grid grid-2">
                         <div>
-                            <div class="badge badge-primary" style="margin-bottom: 1rem;">Design Graphique</div>
-                            <h3 style="color: var(--light); margin-bottom: 0.5rem;">Cartes de Visite Personnalisées</h3>
-                            <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 1.5rem;">Femme
-                                Chrétienne Partage la Parole • 6 membres</h3>
+                            <div class="badge badge-primary" style="margin-bottom: 1rem;">Développement Web</div>
+                            <h2 style="color: var(--light); margin-bottom: 0.5rem;">Plateforme e-commerce B2B</h2>
+                            <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 1.5rem;">Fabricant
+                                industriel • 6 mois</h3>
 
                             <div style="margin-bottom: 2rem;">
                                 <h4 style="color: var(--light); margin-bottom: 0.75rem;">Le défi</h4>
                                 <p style="color: var(--light-secondary);">
-                                    Une communauté chrétienne cherchait à offrir à ses membres des cartes de visite
-                                    professionnelles et totalement personnalisées. Chaque membre devait avoir son propre
-                                    design unique reflétant son métier, ses services et sa personnalité, tout en restant
-                                    connecté à l'identité communautaire.
-                                    Défi : créer 06 designs complètement différents avec une cohérence visuelle globale.
+                                    Un fabricant industriel cherchait à digitaliser ses ventes en gros. Le processus
+                                    manuel entraînait des erreurs, des délais de traitement longs et une limitation des
+                                    ventes aux heures de bureau.
                                 </p>
                             </div>
 
@@ -755,23 +878,23 @@
                                 <ul style="list-style: none; padding: 0; margin: 0;">
                                     <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
                                         <span style="position: absolute; left: 0; color: var(--primary);">•</span>
-                                        <span style="color: var(--light-secondary);">Création d'une charte graphique
-                                            communautaire unifiée (logo, couleurs, typographie)</span>
+                                        <span style="color: var(--light-secondary);">Plateforme e-commerce B2B avec
+                                            catalogue produits personnalisé par client</span>
                                     </li>
                                     <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
                                         <span style="position: absolute; left: 0; color: var(--primary);">•</span>
-                                        <span style="color: var(--light-secondary);">06 designs distincts : chacun avec
-                                            son domaine d'activité, ses couleurs et ses symboles personnels</span>
+                                        <span style="color: var(--light-secondary);">Système de devis automatisé avec
+                                            validation en ligne</span>
                                     </li>
                                     <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
                                         <span style="position: absolute; left: 0; color: var(--primary);">•</span>
-                                        <span style="color: var(--light-secondary);">Collecte d'informations
-                                            personnalisées pour chaque membre (titre, services, contacts)</span>
+                                        <span style="color: var(--light-secondary);">Intégration complète avec l'ERP
+                                            existant (SAP)</span>
                                     </li>
-                                    <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                    <li style="padding-left: 1.5rem; position: relative;">
                                         <span style="position: absolute; left: 0; color: var(--primary);">•</span>
-                                        <span style="color: var(--light-secondary);">Livraison multi-formats : PDF haute
-                                            résolution (300 DPI)</span>
+                                        <span style="color: var(--light-secondary);">Tableau de bord analytique pour le
+                                            suivi des ventes</span>
                                     </li>
                                 </ul>
                             </div>
@@ -779,18 +902,17 @@
                             <div>
                                 <h4 style="color: var(--light); margin-bottom: 0.75rem;">Technologies utilisées</h4>
                                 <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem;">
-                                    <span class="badge badge-secondary">Canva Pro</span>
-                                    <span class="badge badge-secondary">Design Graphique</span>
-                                    <span class="badge badge-secondary">Brand Identity</span>
-                                    <span class="badge badge-secondary">Format d'Impression</span>
-                                    <span class="badge badge-secondary">300 DPI</span>
+                                    <span class="badge badge-secondary">React</span>
+                                    <span class="badge badge-secondary">Node.js</span>
+                                    <span class="badge badge-secondary">PostgreSQL</span>
+                                    <span class="badge badge-accent">SAP Integration</span>
+                                    <span class="badge badge-accent">AWS</span>
                                 </div>
                             </div>
 
                             <!-- Bouton pour ouvrir la galerie Drive -->
                             <div style="margin-top: 2rem;">
-                                <button class="btn-galerie" data-drive-id="1wD8Xpc0TFxibHFuadPoiAwNiB41Y3UGZ"
-                                    data-project-title="Cartes de Visite Personnalisées - Femme Chrétienne Partage la Parole">
+                                <button class="btn-galerie" data-drive-id="1WaTX4zZx3ztPpORmp8qQCNZofyeenioP">
                                     <i class="fas fa-images"></i>
                                     <span>Voir la galerie du projet</span>
                                 </button>
@@ -802,7 +924,7 @@
                                 style="height: 100%; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
                                 <div style="text-align: center; margin-bottom: 2rem;">
                                     <div class="icon icon-lg icon-gradient icon-circle" style="margin: 0 auto 1.5rem;">
-                                        <i class="fas fa-layer-group"></i>
+                                        <i class="fas fa-chart-line"></i>
                                     </div>
                                     <h3 style="color: var(--light); margin-bottom: 0.5rem;">Résultats obtenus</h3>
                                 </div>
@@ -811,29 +933,28 @@
                                     <div style="text-align: center;">
                                         <div
                                             style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
-                                            6</div>
-                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Designs uniques
-                                            livrés
+                                            +40%</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Ventes en ligne</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            -70%</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Erreurs de commande
                                         </p>
                                     </div>
                                     <div style="text-align: center;">
                                         <div
                                             style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
-                                            100%</div>
-                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Satisfaction client
+                                            24/7</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Disponibilité</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            -60%</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Temps de traitement
                                         </p>
-                                    </div>
-                                    <div style="text-align: center;">
-                                        <div
-                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
-                                            7 jours</div>
-                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Délai respecté</p>
-                                    </div>
-                                    <div style="text-align: center;">
-                                        <div
-                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
-                                            1</div>
-                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Formats livrés (PDF)</p>
                                     </div>
                                 </div>
 
@@ -841,14 +962,374 @@
                                     style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(138, 111, 232, 0.2);">
                                     <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Retour client</h4>
                                     <p style="color: var(--light-secondary); font-style: italic;">
-                                        "Les cartes sont magnifiques ! Chacun a son identité propre tout en restant dans
-                                        l'esprit
-                                        communautaire. C'est un vrai atout pour nos échanges professionnels et nos
-                                        réseaux.
-                                        Un travail de qualité avec une grande écoute de nos besoins."
+                                        "PêlêTech Nexus a non seulement livré une plateforme technique solide, mais a
+                                        surtout compris nos processus métier. La solution s'intègre parfaitement à notre
+                                        écosystème."
                                     </p>
                                     <p style="color: var(--light); margin-top: 0.5rem; font-weight: 600;">
-                                        — Dr Christelle Dejolie (USA), Fondatrice de Femme Chrétienne Partage la Parole (FCPP)
+                                        — Directeur Commercial
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="projet-card card animate-slide-up" data-category="mobile" style="margin-top: 4rem;">
+                    <div class="grid grid-2">
+                        <div>
+                            <div class="badge badge-primary" style="margin-bottom: 1rem;">Application Mobile</div>
+                            <h2 style="color: var(--light); margin-bottom: 0.5rem;">Application de livraison de repas
+                            </h2>
+                            <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 1.5rem;">Startup
+                                FoodTech • 4 mois</h3>
+
+                            <div style="margin-bottom: 2rem;">
+                                <h4 style="color: var(--light); margin-bottom: 0.75rem;">Le défi</h4>
+                                <p style="color: var(--light-secondary);">
+                                    Une startup de livraison de repas santé cherchait à développer une application
+                                    mobile pour concurrencer les leaders du marché tout en offrant une expérience
+                                    utilisateur supérieure.
+                                </p>
+                            </div>
+
+                            <div style="margin-bottom: 2rem;">
+                                <h4 style="color: var(--light); margin-bottom: 0.75rem;">Notre solution</h4>
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Application mobile cross-platform
+                                            (iOS & Android)</span>
+                                    </li>
+                                    <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Système de géolocalisation en temps
+                                            réel pour le suivi des livraisons</span>
+                                    </li>
+                                    <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Paiement intégré avec validation
+                                            instantanée</span>
+                                    </li>
+                                    <li style="padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Interface intuitive avec
+                                            recommandations personnalisées</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 style="color: var(--light); margin-bottom: 0.75rem;">Technologies utilisées</h4>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem;">
+                                    <span class="badge badge-secondary">React Native</span>
+                                    <span class="badge badge-secondary">Node.js</span>
+                                    <span class="badge badge-secondary">MongoDB</span>
+                                    <span class="badge badge-accent">Google Maps API</span>
+                                    <span class="badge badge-accent">Stripe</span>
+                                </div>
+                            </div>
+
+                            <!-- Bouton pour ouvrir la galerie Drive -->
+                            <div style="margin-top: 2rem;">
+                                <button class="btn-galerie" data-drive-id="1iEwk5flZc1_rHyjk6UxYxgBdKPuA7VrK">
+                                    <i class="fas fa-images"></i>
+                                    <span>Voir la galerie du projet</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="card card-gradient"
+                                style="height: 100%; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
+                                <div style="text-align: center; margin-bottom: 2rem;">
+                                    <div class="icon icon-lg icon-gradient icon-circle" style="margin: 0 auto 1.5rem;">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <h3 style="color: var(--light); margin-bottom: 0.5rem;">Impact mesuré</h3>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            4.8★</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Note moyenne App
+                                            Store</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            +25k</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Téléchargements</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            +300%</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Commandes/mois</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            -40%</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Délai de
+                                            développement</p>
+                                    </div>
+                                </div>
+
+                                <div
+                                    style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(138, 111, 232, 0.2);">
+                                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Retour client</h4>
+                                    <p style="color: var(--light-secondary); font-style: italic;">
+                                        "Le développement avec React Native nous a permis de lancer simultanément sur
+                                        iOS et Android, économisant temps et budget. L'application est stable et les
+                                        utilisateurs l'adorent."
+                                    </p>
+                                    <p style="color: var(--light); margin-top: 0.5rem; font-weight: 600;">
+                                        — CEO, Startup FoodTech
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="projet-card card animate-slide-up" data-category="design" style="margin-top: 4rem;">
+                    <div class="grid grid-2">
+                        <div>
+                            <div class="badge badge-primary" style="margin-bottom: 1rem;">UI/UX Design</div>
+                            <h2 style="color: var(--light); margin-bottom: 0.5rem;">Refonte d'interface SaaS B2B</h2>
+                            <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 1.5rem;">Éditeur de
+                                logiciel • 3 mois</h3>
+
+                            <div style="margin-bottom: 2rem;">
+                                <h4 style="color: var(--light); margin-bottom: 0.75rem;">Le défi</h4>
+                                <p style="color: var(--light-secondary);">
+                                    Un éditeur de logiciel SaaS B2B voyait ses taux d'adoption stagner malgré des
+                                    fonctionnalités solides. L'interface vieillissante et complexe décourageait les
+                                    nouveaux utilisateurs.
+                                </p>
+                            </div>
+
+                            <div style="margin-bottom: 2rem;">
+                                <h4 style="color: var(--light); margin-bottom: 0.75rem;">Notre approche</h4>
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Audit UX complet avec analyse des
+                                            parcours utilisateurs</span>
+                                    </li>
+                                    <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Conception d'un nouveau système de
+                                            design cohérent</span>
+                                    </li>
+                                    <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Simplification des workflows
+                                            complexes</span>
+                                    </li>
+                                    <li style="padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Tests utilisateurs itératifs pour
+                                            validation</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 style="color: var(--light); margin-bottom: 0.75rem;">Livrables</h4>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem;">
+                                    <span class="badge badge-secondary">Design System</span>
+                                    <span class="badge badge-secondary">Wireframes</span>
+                                    <span class="badge badge-secondary">Prototypes interactifs</span>
+                                    <span class="badge badge-accent">Guide de style</span>
+                                    <span class="badge badge-accent">Composants React</span>
+                                </div>
+                            </div>
+
+                            <!-- Bouton pour ouvrir la galerie Drive -->
+                            <div style="margin-top: 2rem;">
+                                <button class="btn-galerie" data-drive-id="FOLDER_ID_3">
+                                    <i class="fas fa-images"></i>
+                                    <span>Voir la galerie du projet</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="card card-gradient"
+                                style="height: 100%; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
+                                <div style="text-align: center; margin-bottom: 2rem;">
+                                    <div class="icon icon-lg icon-gradient icon-circle" style="margin: 0 auto 1.5rem;">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <h3 style="color: var(--light); margin-bottom: 0.5rem;">Améliorations mesurées</h3>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            +65%</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Taux de complétion
+                                            onboarding</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            -55%</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Tickets support</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            +42%</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">NPS (Net Promoter
+                                            Score)</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            4.2→4.8</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Satisfaction
+                                            utilisateur</p>
+                                    </div>
+                                </div>
+
+                                <div
+                                    style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(138, 111, 232, 0.2);">
+                                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Retour client</h4>
+                                    <p style="color: var(--light-secondary); font-style: italic;">
+                                        "La refonte a complètement transformé l'expérience de nos utilisateurs. Non
+                                        seulement elle est plus belle, mais surtout plus efficace. Nos équipes internes
+                                        peuvent maintenant développer de nouvelles fonctionnalités beaucoup plus
+                                        rapidement grâce au design system."
+                                    </p>
+                                    <p style="color: var(--light); margin-top: 0.5rem; font-weight: 600;">
+                                        — Product Manager
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NOUVEAU PROJET -->
+                <div class="projet-card card animate-slide-up" data-category="web" style="margin-top: 4rem;">
+                    <div class="grid grid-2">
+                        <div>
+                            <div class="badge badge-primary" style="margin-bottom: 1rem;">Développement Web</div>
+                            <h2 style="color: var(--light); margin-bottom: 0.5rem;">Application de Gestion de Projets
+                            </h2>
+                            <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 1.5rem;">Startup Tech •
+                                3 mois</h3>
+
+                            <div style="margin-bottom: 2rem;">
+                                <h4 style="color: var(--light); margin-bottom: 0.75rem;">Le défi</h4>
+                                <p style="color: var(--light-secondary);">
+                                    Une startup tech avait besoin d'une application web pour gérer ses projets
+                                    collaboratifs en temps réel avec une équipe distribuée dans plusieurs pays.
+                                </p>
+                            </div>
+
+                            <div style="margin-bottom: 2rem;">
+                                <h4 style="color: var(--light); margin-bottom: 0.75rem;">Notre solution</h4>
+                                <ul style="list-style: none; padding: 0; margin: 0;">
+                                    <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Application web responsive avec
+                                            tableau de bord personnalisé</span>
+                                    </li>
+                                    <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Synchronisation en temps réel entre
+                                            tous les utilisateurs</span>
+                                    </li>
+                                    <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Système de notifications et rappels
+                                            automatisés</span>
+                                    </li>
+                                    <li style="padding-left: 1.5rem; position: relative;">
+                                        <span style="position: absolute; left: 0; color: var(--primary);">•</span>
+                                        <span style="color: var(--light-secondary);">Export de rapports en PDF et
+                                            Excel</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h4 style="color: var(--light); margin-bottom: 0.75rem;">Technologies utilisées</h4>
+                                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem;">
+                                    <span class="badge badge-secondary">React</span>
+                                    <span class="badge badge-secondary">TypeScript</span>
+                                    <span class="badge badge-secondary">Firebase</span>
+                                    <span class="badge badge-accent">Material-UI</span>
+                                    <span class="badge badge-accent">Chart.js</span>
+                                </div>
+                            </div>
+
+                            <!-- Bouton pour ouvrir la galerie Drive -->
+                            <div style="margin-top: 2rem;">
+                                <button class="btn-galerie" data-drive-id="FOLDER_ID_4">
+                                    <i class="fas fa-images"></i>
+                                    <span>Voir la galerie du projet</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="card card-gradient"
+                                style="height: 100%; padding: 2rem; display: flex; flex-direction: column; justify-content: center;">
+                                <div style="text-align: center; margin-bottom: 2rem;">
+                                    <div class="icon icon-lg icon-gradient icon-circle" style="margin: 0 auto 1.5rem;">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <h3 style="color: var(--light); margin-bottom: 0.5rem;">Résultats obtenus</h3>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            +45%</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Productivité équipe
+                                        </p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            -60%</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Retards projet</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            +50</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Utilisateurs actifs
+                                        </p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div
+                                            style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">
+                                            9.2/10</div>
+                                        <p style="color: var(--light-secondary); font-size: 0.9rem;">Satisfaction</p>
+                                    </div>
+                                </div>
+
+                                <div
+                                    style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(138, 111, 232, 0.2);">
+                                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Retour client</h4>
+                                    <p style="color: var(--light-secondary); font-style: italic;">
+                                        "L'application a transformé notre façon de travailler. Notre équipe est plus
+                                        organisée et nous respectons désormais systématiquement nos délais."
+                                    </p>
+                                    <p style="color: var(--light); margin-top: 0.5rem; font-weight: 600;">
+                                        — CEO, Startup Tech
                                     </p>
                                 </div>
                             </div>
@@ -1063,6 +1544,9 @@
                             <i class="fas fa-folder"></i> Documents
                             <span id="galerie-doc-count" class="galerie-tab-badge">0</span>
                         </button>
+                        <button class="galerie-modal-tab" data-tab="info">
+                            <i class="fas fa-info-circle"></i> Informations
+                        </button>
                     </div>
 
                     <!-- Contenu des onglets -->
@@ -1081,6 +1565,49 @@
                     <div class="galerie-modal-tab-content" id="galerie-tab-documents">
                         <div class="galerie-documents-list" id="galerie-documents">
                             <!-- Documents seront chargés ici -->
+                        </div>
+                    </div>
+
+                    <div class="galerie-modal-tab-content" id="galerie-tab-info">
+                        <div class="galerie-project-info">
+                            <div class="galerie-info-grid">
+                                <div class="galerie-info-item">
+                                    <h4><i class="fas fa-user"></i> Client</h4>
+                                    <p id="galerie-info-client">-</p>
+                                </div>
+                                <div class="galerie-info-item">
+                                    <h4><i class="fas fa-calendar"></i> Année</h4>
+                                    <p id="galerie-info-year">-</p>
+                                </div>
+                                <div class="galerie-info-item">
+                                    <h4><i class="fas fa-layer-group"></i> Catégorie</h4>
+                                    <p id="galerie-info-category">-</p>
+                                </div>
+                                <div class="galerie-info-item">
+                                    <h4><i class="fas fa-code"></i> Technologies</h4>
+                                    <div id="galerie-info-technologies" class="galerie-tech-tags"></div>
+                                </div>
+                            </div>
+
+                            <div class="galerie-info-section">
+                                <h4><i class="fas fa-bullseye"></i> Défi</h4>
+                                <p id="galerie-info-challenge">-</p>
+                            </div>
+
+                            <div class="galerie-info-section">
+                                <h4><i class="fas fa-chart-line"></i> Résultats</h4>
+                                <p id="galerie-info-results">-</p>
+                            </div>
+
+                            <div class="galerie-info-section">
+                                <h4><i class="fas fa-star"></i> Fonctionnalités</h4>
+                                <ul id="galerie-info-features" class="galerie-features-list"></ul>
+                            </div>
+
+                            <div class="galerie-info-section">
+                                <h4><i class="fas fa-folder-open"></i> Fichiers disponibles</h4>
+                                <div id="galerie-file-stats" class="galerie-file-stats"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1108,6 +1635,17 @@
         </div>
     </div>
 
+    <!-- Image Viewer (fullscreen) - CORRIGÉ -->
+    <div id="galerie-image-viewer" class="galerie-image-viewer">
+        <button class="galerie-image-viewer-close">&times;</button>
+        <button class="galerie-image-viewer-nav prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="galerie-image-viewer-nav next"><i class="fas fa-chevron-right"></i></button>
+        <div class="galerie-image-viewer-content">
+            <img id="galerie-viewer-image" src="" alt="">
+        </div>
+        <div id="galerie-image-info" class="galerie-image-info" style="display: none;"></div>
+    </div>
+
     <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
         <i class="fas fa-chevron-up"></i>
     </button>
@@ -1117,7 +1655,7 @@
     <script src="js/drive-projects.js"></script>
     <script src="js/galerie-manager.js"></script>
     <script>
-        // Filtrage des projets existants – version multi‑catégories
+        // Filtrage des projets existants
         document.addEventListener('DOMContentLoaded', function () {
             const filterBtns = document.querySelectorAll('.filter-btn');
             const projectCards = document.querySelectorAll('.projet-card');
@@ -1132,12 +1670,7 @@
                     const filter = this.getAttribute('data-filter');
 
                     projectCards.forEach(card => {
-                        const cardCategories = card.getAttribute('data-category') || '';
-                        // On divise la chaîne par les espaces pour obtenir un tableau de catégories
-                        const categoriesArray = cardCategories.split(' ').filter(cat => cat.trim() !== '');
-
-                        // Si le filtre est "all" ou si la catégorie du filtre est présente dans le tableau
-                        if (filter === 'all' || categoriesArray.includes(filter)) {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
                             card.style.display = 'block';
                             card.style.animation = 'slideUp 0.5s ease-out';
                         } else {
@@ -1146,7 +1679,139 @@
                     });
                 });
             });
+
+            // Gestionnaire d'images pour le viewer - CORRECTION
+            let currentImages = [];
+            let currentImageIndex = 0;
+
+            // Fonction pour ouvrir le viewer d'images
+            window.openImageViewer = function (index, images) {
+                if (!images || images.length === 0) return;
+
+                currentImages = images;
+                currentImageIndex = index;
+
+                const viewer = document.getElementById('galerie-image-viewer');
+                const viewerImg = document.getElementById('galerie-viewer-image');
+                const imageInfo = document.getElementById('galerie-image-info');
+
+                if (viewer && viewerImg) {
+                    viewerImg.src = images[index].url || images[index].thumbnail;
+                    viewerImg.alt = images[index].name || 'Image';
+
+                    // Afficher le nom de l'image
+                    if (imageInfo) {
+                        imageInfo.textContent = images[index].name || '';
+                        imageInfo.style.display = images[index].name ? 'block' : 'none';
+                    }
+
+                    viewer.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            };
+
+            // Fonction pour fermer le viewer
+            window.closeImageViewer = function () {
+                const viewer = document.getElementById('galerie-image-viewer');
+                if (viewer) {
+                    viewer.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            // Fonction pour naviguer entre les images
+            window.navigateImageViewer = function (direction) {
+                if (currentImages.length === 0) return;
+
+                currentImageIndex = (currentImageIndex + direction + currentImages.length) % currentImages.length;
+
+                const viewerImg = document.getElementById('galerie-viewer-image');
+                const imageInfo = document.getElementById('galerie-image-info');
+
+                if (viewerImg) {
+                    viewerImg.src = currentImages[currentImageIndex].url || currentImages[currentImageIndex].thumbnail;
+                    viewerImg.alt = currentImages[currentImageIndex].name || 'Image';
+
+                    // Afficher le nom de l'image
+                    if (imageInfo) {
+                        imageInfo.textContent = currentImages[currentImageIndex].name || '';
+                        imageInfo.style.display = currentImages[currentImageIndex].name ? 'block' : 'none';
+                    }
+                }
+            };
+
+            // Attacher les événements du viewer
+            const viewerClose = document.querySelector('.galerie-image-viewer-close');
+            const viewerPrev = document.querySelector('.galerie-image-viewer-nav.prev');
+            const viewerNext = document.querySelector('.galerie-image-viewer-nav.next');
+
+            if (viewerClose) {
+                viewerClose.addEventListener('click', closeImageViewer);
+            }
+
+            if (viewerPrev) {
+                viewerPrev.addEventListener('click', () => navigateImageViewer(-1));
+            }
+
+            if (viewerNext) {
+                viewerNext.addEventListener('click', () => navigateImageViewer(1));
+            }
+
+            // Fermer avec Escape
+            document.addEventListener('keydown', function (e) {
+                const viewer = document.getElementById('galerie-image-viewer');
+                if (e.key === 'Escape' && viewer && viewer.classList.contains('active')) {
+                    closeImageViewer();
+                }
+
+                // Navigation avec flèches
+                if (viewer && viewer.classList.contains('active')) {
+                    if (e.key === 'ArrowLeft') {
+                        navigateImageViewer(-1);
+                    } else if (e.key === 'ArrowRight') {
+                        navigateImageViewer(1);
+                    }
+                }
+            });
+
+            // Fermer en cliquant à l'extérieur de l'image
+            const viewer = document.getElementById('galerie-image-viewer');
+            if (viewer) {
+                viewer.addEventListener('click', function (e) {
+                    if (e.target === this || e.target.classList.contains('galerie-image-viewer-content')) {
+                        closeImageViewer();
+                    }
+                });
+            }
+
+            // Surcharger la méthode openImageViewer du galerieManager
+            if (window.galerieManager && window.galerieManager.openImageViewer) {
+                const originalOpenImageViewer = window.galerieManager.openImageViewer;
+                window.galerieManager.openImageViewer = function (index) {
+                    if (this.currentImages && this.currentImages.length > 0) {
+                        window.openImageViewer(index, this.currentImages);
+                    } else {
+                        originalOpenImageViewer.call(this, index);
+                    }
+                };
+            }
         });
+
+        // Redéfinir les fonctions du viewer pour les rendre accessibles globalement
+        window.openImageViewer = window.openImageViewer || function (index, images) {
+            // Implémentation par défaut
+            console.log('Ouvrir viewer:', index, images);
+        };
+
+        window.closeImageViewer = window.closeImageViewer || function () {
+            // Implémentation par défaut
+            console.log('Fermer viewer');
+        };
+
+        window.navigateImageViewer = window.navigateImageViewer || function (direction) {
+            // Implémentation par défaut
+            console.log('Naviguer viewer:', direction);
+        };
     </script>
 </body>
 

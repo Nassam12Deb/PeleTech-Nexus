@@ -208,7 +208,7 @@
         </section>
 
         <!-- Valeurs -->
-        <section id="valeurs">
+        <section id="valeurs" class="bg-dark-light">
             <div class="container">
                 <h2 class="section-title">Nos valeurs fondamentales</h2>
                 <p class="section-subtitle">Les principes qui guident chaque décision, chaque ligne de code, chaque
@@ -246,7 +246,7 @@
         </section>
 
         <!-- Approche technique -->
-        <section id="approche" class="bg-dark-light">
+        <section id="approche">
             <div class="container">
                 <div class="grid grid-2">
                     <div>
@@ -336,7 +336,7 @@
         </section>
 
         <!-- Section Ressources éducatives – cartes design amélioré, icônes centrées -->
-        <section id="ressources" class="bg-darker">
+        <section id="ressources" class="bg-dark-light">
             <div class="container">
                 <!-- Titre et introduction -->
                 <div style="text-align: center; max-width: 1000px; margin: 0 auto 3rem auto;">
@@ -416,8 +416,9 @@
         </section>
 
         <!-- CTA -->
-        <section style="background: linear-gradient(135deg, rgba(138, 111, 232, 0.1), rgba(79, 163, 217, 0.1));">
+        <section>
             <div class="container">
+                <!-- style="background: linear-gradient(135deg, rgba(138, 111, 232, 0.1), rgba(79, 163, 217, 0.1));" -->
                 <div class="card"
                     style="text-align: center; padding: 4rem 2rem; background: rgba(11, 16, 32, 0.8); border: 1px solid rgba(138, 111, 232, 0.3);">
                     <h2 style="margin-bottom: 1rem; color: var(--light);">Travaillons ensemble</h2>
@@ -440,13 +441,13 @@
                     <p style="color: var(--gray-light); margin-bottom: 1.5rem;">Silence structuré. Code incarné. Le
                         sens, sous la surface.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
+                        <a href="https://www.facebook.com/people/PêlêTech-Nexus/61582899320642/" class="social-link" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/peledebnassam" class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/peledebnassam?igsh=MTIycDV5eGZ6dmR2Mw==" class="social-link" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://api.whatsapp.com/send?phone=2290165203660" class="social-link"
@@ -480,7 +481,7 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li style="color: var(--gray-light);">Email: contact@peletech-nexus.com</li>
+                        <li style="color: var(--gray-light);">Email: contact.pelenexus@gmail.com</li>
                         <li style="color: var(--gray-light);">Réponse sous 24h</li>
                         <li><a href="contact.php">Formulaire de contact</a></li>
                     </ul>

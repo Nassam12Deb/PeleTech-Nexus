@@ -74,125 +74,21 @@ const DRIVE_CONFIG = {
 
 // Descriptions des projets (À CONFIGURER AVEC VOS PROPRES DONNÉES)
 window.projectDescriptions = {
-    // Exemple - Remplacez les IDs par vos vrais IDs de dossiers Drive
-    '1WaTX4zZx3ztPpORmp8qQCNZofyeenioP': {
-        title: 'Plateforme e-commerce B2B',
-        description: 'Plateforme e-commerce B2B complète avec catalogue produits personnalisé, système de devis automatisé et intégration ERP.',
-        category: 'web',
-        year: 2023,
-        client: 'Fabricant industriel',
-        technologies: ['React', 'Node.js', 'PostgreSQL', 'SAP Integration', 'AWS'],
+    // Projet: Site Vitrine - Éclat d'Identité Fashion Style
+    '12dksfIsLuGqhOFor8uTJjXf9_f_8pZE5': {
+        title: 'Site Vitrine - Éclat d\'Identité Fashion Style',
+        client: 'Créatrice & Styliste',
+        year: 2025,
+        category: 'Web Development',
+        technologies: ['HTML5', 'CSS3', 'JavaScript', 'Google Drive API', 'Responsive Design'],
         features: [
-            'Catalogue produits personnalisé par client',
-            'Système de devis automatisé avec validation en ligne',
-            'Intégration complète avec SAP ERP',
-            'Tableau de bord analytique pour le suivi des ventes'
+            'Site vitrine responsive',
+            'Galerie dynamique',
+            'Système de devis',
+            'Prise de rendez-vous'
         ],
-        challenges: 'Digitalisation des ventes en gros avec processus manuel entraînant des erreurs et délais de traitement longs.',
-        results: '+40% de ventes en ligne, -70% d\'erreurs de commande, disponibilité 24/7, -60% du temps de traitement.'
-    },
-    
-    '1AltYWMmW_lxwto6qrO5w4eDWBTO-RZ11': {
-        title: 'Application de livraison de repas',
-        description: 'Application mobile cross-platform de livraison de repas santé avec géolocalisation en temps réel et paiement intégré.',
-        category: 'mobile',
-        year: 2024,
-        client: 'Startup FoodTech',
-        technologies: ['React Native', 'Node.js', 'MongoDB', 'Google Maps API', 'Stripe'],
-        features: [
-            'Application cross-platform (iOS & Android)',
-            'Géolocalisation en temps réel pour le suivi des livraisons',
-            'Paiement intégré avec validation instantanée',
-            'Interface intuitive avec recommandations personnalisées'
-        ],
-        challenges: 'Développer une application mobile pour concurrencer les leaders du marché avec une expérience utilisateur supérieure.',
-        results: '4.8★ note moyenne App Store, +25k téléchargements, +300% de commandes/mois, -40% de délai de développement.'
-    },
-    
-    'FOLDER_ID_3': {
-        title: 'Refonte d\'interface SaaS B2B',
-        description: 'Refonte complète de l\'interface utilisateur d\'un logiciel SaaS B2B avec audit UX et création d\'un design system.',
-        category: 'design',
-        year: 2023,
-        client: 'Éditeur de logiciel',
-        technologies: ['Figma', 'Design System', 'Prototypes interactifs', 'React Components'],
-        features: [
-            'Audit UX complet avec analyse des parcours utilisateurs',
-            'Conception d\'un nouveau système de design cohérent',
-            'Simplification des workflows complexes',
-            'Tests utilisateurs itératifs pour validation'
-        ],
-        challenges: 'Taux d\'adoption stagnants malgré des fonctionnalités solides, interface vieillissante et complexe décourageant les nouveaux utilisateurs.',
-        results: '+65% de taux de complétion onboarding, -55% de tickets support, +42% de NPS, satisfaction utilisateur de 4.2→4.8.'
-    },
-    
-    'FOLDER_ID_4': {
-        title: 'Application de Gestion de Projets',
-        description: 'Application web de gestion de projets collaboratifs avec synchronisation en temps réel et export de rapports.',
-        category: 'web',
-        year: 2024,
-        client: 'Startup Tech',
-        technologies: ['React', 'TypeScript', 'Firebase', 'Material-UI', 'Chart.js'],
-        features: [
-            'Tableau de bord personnalisé',
-            'Synchronisation en temps réel entre utilisateurs',
-            'Système de notifications et rappels automatisés',
-            'Export de rapports en PDF et Excel'
-        ],
-        challenges: 'Gestion de projets collaboratifs en temps réel avec une équipe distribuée dans plusieurs pays.',
-        results: '+45% de productivité de l\'équipe, -60% de retards projet, +50 utilisateurs actifs, satisfaction 9.2/10.'
-    },
-    
-    // Ajoutez les autres projets ici...
-    'FOLDER_ID_5': {
-        title: 'Portail client immobilier',
-        description: 'Plateforme de gestion de biens immobiliers avec suivi des locations, paiements en ligne et communication propriétaire-locataire.',
-        category: 'web',
-        year: 2023,
-        client: 'Agence immobilière',
-        technologies: ['Vue.js', 'Laravel', 'Stripe'],
-        features: [
-            'Gestion des biens immobiliers',
-            'Suivi des locations et paiements en ligne',
-            'Communication propriétaire-locataire',
-            'Tableau de bord administrateur'
-        ],
-        challenges: 'Automatisation des processus manuels de gestion immobilière.',
-        results: '+50% d\'automatisation, réduction de 70% du temps de gestion.'
-    },
-    
-    'FOLDER_ID_6': {
-        title: 'App de fitness connectée',
-        description: 'Application de suivi d\'activité physique avec synchronisation des bracelets connectés et programmes d\'entraînement personnalisés.',
-        category: 'mobile',
-        year: 2024,
-        client: 'Marque de fitness',
-        technologies: ['Flutter', 'Firebase', 'API HealthKit'],
-        features: [
-            'Suivi d\'activité en temps réel',
-            'Synchronisation avec wearables',
-            'Programmes d\'entraînement personnalisés',
-            'Communauté et défis'
-        ],
-        challenges: 'Compatibilité avec différents modèles de bracelets connectés.',
-        results: '4.7★ sur les stores, +100k téléchargements.'
-    },
-    
-    'FOLDER_ID_7': {
-        title: 'Site vitrine premium',
-        description: 'Design et développement d\'un site vitrine haut de gamme pour une marque de luxe, avec animations subtiles et expérience immersive.',
-        category: 'design',
-        year: 2023,
-        client: 'Marque de luxe',
-        technologies: ['Figma', 'GSAP', 'Three.js'],
-        features: [
-            'Design premium et élégant',
-            'Animations subtiles et fluides',
-            'Expérience utilisateur immersive',
-            'Optimisation pour mobile'
-        ],
-        challenges: 'Créer une expérience unique qui reflète le positionnement haut de gamme de la marque.',
-        results: '+35% de leads qualifiés, temps moyen de session de 5+ minutes.'
+        challenges: 'Créer une présence en ligne professionnelle reflétant l\'excellence du travail artisanal.',
+        results: '100% satisfaction client, 20+ créations exposées, mise en ligne 3 jours, disponibilité 24/7'
     }
 };
 
