@@ -139,7 +139,7 @@ $profil = $pdo->query("SELECT * FROM profil WHERE id = 1")->fetch();
             <div class="card card-gradient">
                 <div style="text-align: center; padding: 2rem;">
                     <div class="icon icon-lg icon-gradient icon-circle" style="margin: 0 auto 1.5rem; width: 120px; height: 120px;">
-                        <img src="assets/logo.png" alt="PêlêTech Nexus" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+                        <img src="assets/img/logo.png" alt="PêlêTech Nexus" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
                     </div>
                     <h3 style="margin-bottom: 1.5rem; color: var(--light);">La marque & sa fondatrice</h3>
                     <p style="margin-bottom: 1.5rem; color: var(--light-secondary);">

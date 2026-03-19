@@ -161,7 +161,7 @@ $services = $pdo->query("SELECT * FROM services ORDER BY ordre LIMIT 4")->fetchA
                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(138, 111, 232, 0.1), rgba(79, 163, 217, 0.1)); border-radius: var(--radius-xl);">
                     </div>
                     <div class="icon icon-lg icon-gradient icon-circle" style="z-index: 1;">
-                        <img src="assets/profil.png" alt="PêlêTech Nexus"
+                        <img src="assets/img/profil.png" alt="PêlêTech Nexus"
                             style="height: 300px; width: 300px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary);">
                     </div>
                 </div>
